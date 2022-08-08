@@ -3,16 +3,13 @@
 namespace Charcoal\Cms;
 
 use InvalidArgumentException;
-
 // From 'charcoal-core'
 use Charcoal\Model\Collection;
 use Charcoal\Loader\CollectionLoader;
-
 // From 'charcoal-object'
 use Charcoal\Object\Content;
 use Charcoal\Object\HierarchicalTrait;
 use Charcoal\Object\RoutableTrait;
-
 // From 'charcoal-translator'
 use Charcoal\Translator\Translation;
 
@@ -44,11 +41,11 @@ abstract class AbstractSection extends Content implements SectionInterface
     use SearchableTrait;
     use TemplateableTrait;
 
-    const TYPE_BLOCKS = 'charcoal/cms/section/blocks-section';
-    const TYPE_CONTENT = 'charcoal/cms/section/content-section';
-    const TYPE_EMPTY = 'charcoal/cms/section/empty-section';
-    const TYPE_EXTERNAL = 'charcoal/cms/section/external-section';
-    const DEFAULT_TYPE = self::TYPE_CONTENT;
+    public const TYPE_BLOCKS = 'charcoal/cms/section/blocks-section';
+    public const TYPE_CONTENT = 'charcoal/cms/section/content-section';
+    public const TYPE_EMPTY = 'charcoal/cms/section/empty-section';
+    public const TYPE_EXTERNAL = 'charcoal/cms/section/external-section';
+    public const DEFAULT_TYPE = self::TYPE_CONTENT;
 
     /**
      * @var string
@@ -132,7 +129,7 @@ abstract class AbstractSection extends Content implements SectionInterface
      */
     public function hierarchicalLabel()
     {
-        return str_repeat('— ', ($this->hierarchyLevel() - 1)).$this->title();
+        return str_repeat('— ', ($this->hierarchyLevel() - 1)) . $this->title();
     }
 
     /**

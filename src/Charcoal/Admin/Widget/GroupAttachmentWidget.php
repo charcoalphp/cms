@@ -4,24 +4,19 @@ namespace Charcoal\Admin\Widget;
 
 use InvalidArgumentException;
 use RuntimeException;
-
 // From Pimple
 use Pimple\Container;
-
 // From 'charcoal-core'
 use Charcoal\Model\MetadataInterface;
 use Charcoal\Model\Service\MetadataLoader;
-
 // From 'charcoal-property'
 use Charcoal\Property\Structure\StructureMetadata;
-
 // From 'charcoal-ui'
 use Charcoal\Ui\Form\FormInterface;
 use Charcoal\Ui\Form\FormTrait;
 use Charcoal\Ui\Layout\LayoutAwareInterface;
 use Charcoal\Ui\Layout\LayoutAwareTrait;
 use Charcoal\Ui\PrioritizableInterface;
-
 // From 'charcoal-cms'
 use Charcoal\Cms\TemplateableInterface;
 
@@ -34,20 +29,6 @@ class GroupAttachmentWidget extends AttachmentWidget implements
 {
     use FormTrait;
     use LayoutAwareTrait;
-
-    /**
-     * The cache of snake-cased words.
-     *
-     * @var array
-     */
-    protected static $snakeCache = [];
-
-    /**
-     * The cache of camel-cased words.
-     *
-     * @var array
-     */
-    protected static $camelCache = [];
 
     /**
      * Store the metadata loader instance.
@@ -198,7 +179,11 @@ class GroupAttachmentWidget extends AttachmentWidget implements
             $structureMetadata = $this->createMetadata();
 
             if (count($interfaces)) {
-                $controllerMetadataIdent = sprintf('widget/metadata/%s/%s', $obj->objType(), $obj->id());
+                $controllerMetadataIdent = sprintf(
+                    'widget/metadata/%s/%s',
+                    $obj->objType(),
+                    $obj->id()
+                );
                 $structureMetadata       = $this->metadataLoader()->load(
                     $controllerMetadataIdent,
                     $structureMetadata,

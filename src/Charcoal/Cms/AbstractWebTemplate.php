@@ -4,27 +4,20 @@ namespace Charcoal\Cms;
 
 use ArrayIterator;
 use RuntimeException;
-
 // From 'psr/http-message'
 use Psr\Http\Message\UriInterface;
-
 // From 'pimple/pimple'
 use Pimple\Container;
-
 // From 'charcoal-core'
 use Charcoal\Model\ModelInterface;
-
 // From 'charcoal-translator'
 use Charcoal\Translator\TranslatorAwareTrait;
-
 // From 'charcoal-app'
 use Charcoal\App\AppConfig;
 use Charcoal\App\DebugAwareTrait;
 use Charcoal\App\Template\AbstractTemplate;
-
 // From 'charcoal-core'
 use Charcoal\Model\ModelFactoryTrait;
-
 // From 'charcoal-cms'
 use Charcoal\Cms\MetatagInterface;
 use Charcoal\Cms\Support\ContextualTemplateTrait;
@@ -50,7 +43,7 @@ abstract class AbstractWebTemplate extends AbstractTemplate
      *
      * @var string
      */
-    const DEFAULT_SOCIAL_MEDIA_IMAGE = '';
+    public const DEFAULT_SOCIAL_MEDIA_IMAGE = '';
 
     /**
      * The application's configuration container.

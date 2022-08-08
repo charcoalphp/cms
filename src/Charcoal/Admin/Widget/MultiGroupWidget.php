@@ -3,23 +3,18 @@
 namespace Charcoal\Admin\Widget;
 
 use RuntimeException;
-
 // from 'charcoal-admin'
 use Charcoal\Admin\Ui\ObjectContainerInterface;
 use Charcoal\Admin\Ui\ObjectContainerTrait;
 use Charcoal\Admin\AdminWidget;
-
 // form 'charcoal-factory'
 use Charcoal\Factory\FactoryInterface;
-
 // from 'charcoal-property'
 use Charcoal\Property\ModelStructureProperty;
 use Charcoal\Property\PropertyInterface;
 use Charcoal\Property\StructureProperty;
-
 // From Pimple
 use Pimple\Container;
-
 // From 'charcoal-ui'
 use Charcoal\Ui\Form\FormInterface;
 use Charcoal\Ui\Form\FormTrait;
@@ -38,20 +33,6 @@ class MultiGroupWidget extends AdminWidget implements
     use FormTrait;
     use LayoutAwareTrait;
     use ObjectContainerTrait;
-
-    /**
-     * The cache of snake-cased words.
-     *
-     * @var array
-     */
-    protected static $snakeCache = [];
-
-    /**
-     * The cache of camel-cased words.
-     *
-     * @var array
-     */
-    protected static $camelCache = [];
 
     /**
      * @var string
